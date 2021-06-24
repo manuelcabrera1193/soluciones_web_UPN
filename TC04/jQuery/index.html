@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TC03-Ejemplo JQuery</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <style type="text/css">
+        .container {
+            background-color: beige;
+            margin: 50px 50px 50px 50px;
+            border: 2px solid black;
+            border-radius: 25px;
+        }
+        
+        .allpading {
+            padding: 10px 10px 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container allpading">
+        <h1>TC03-Ejemplo JQuery</h1><br><br>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#registrar").show();
+                $("#cancelar").hide();
+                $("#formulario").hide();
+                $("#registrar").click(function() {
+                    $("#formulario").show(1000);
+                    $("#cancelar").show(1000);
+                    $("#registrar").hide(1000);
+                });
+
+                $("#cancelar").click(function() {
+                    $("#formulario").hide(1000);
+                    $("#cancelar").hide(1000);
+                    $("#registrar").show(1000);
+                });
+
+                $.fn.register = function() {
+                    alert("Se registro correctamente");
+                }
+
+                $("#enviar").click(function() {
+                    $("#formulario").hide(1000);
+                    $("#cancelar").hide(1000);
+                    $("#registrar").show(1000)
+                    $.fn.register();
+                });
+
+                $("#numberDocument").keypress(function(event) {
+                    if (event.which < 48 || event.which > 57 || this.value.length === 8) {
+                        return false;
+                    }
+                });
+                $("#nombres").keypress(function(event) {
+                    if (this.value.length === 30) {
+                        return false;
+                    }
+                });
+                $("#apellidos").keypress(function(event) {
+                    if (this.value.length === 30) {
+                        return false;
+                    }
+                });
+                $("#celular").keypress(function(event) {
+                    if (event.which < 48 || event.which > 57 || this.value.length === 9) {
+                        return false;
+                    }
+                });
+
+            });
+        </script>
+        <div class="row form-group allpading">
+            <button id="registrar" class="btn btn-primary   ">Registrar</button>
+        </div>
+        <form id="formulario">
+            <div class="row g1">
+                <div class="col-sm form-group allpading">
+                    <select class="form-control" id="typeDocument">
+                        <option disabled selected>Tipo de Documento</option>
+                        <option value="1">DNI</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g1">
+                <div class="col-sm form-group allpading">
+                    <input type="text" class="form-control" id="numberDocument" placeholder="Numero de documento">
+                </div>
+            </div>
+            <div class="row g1">
+                <div class="col-sm form-group allpading">
+                    <input type="text" class="form-control" id="nombres" placeholder="Nombres">
+                </div>
+            </div>
+            <div class="row g1">
+                <div class="col-sm form-group allpading">
+                    <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+                </div>
+            </div>
+            <div class="row g1">
+                <div class="col-sm form-group allpading">
+                    <input type="text" class="form-control" id="celular" placeholder="Celular">
+                </div>
+            </div>
+            <div class="row form-group allpading">
+                <button id="enviar" type="submit" class="btn btn-success">Guardar</button>
+            </div>
+
+        </form>
+        <div class="row form-group allpading">
+            <button id="cancelar" class="btn btn-danger">Cancelar</button><br/>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+
+</html>

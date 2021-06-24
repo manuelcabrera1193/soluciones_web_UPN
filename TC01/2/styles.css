@@ -1,0 +1,59 @@
+@charset "UTF-8";
+.content {
+    background-color: white;
+}
+
+.header {
+    background-color: beige;
+    width: 760px;
+    height: 152px;
+}
+
+.linea1 {
+    background-color: burlywood;
+    width: 17px;
+    height: 100%;
+    float: left;
+    clear: none;
+}
+
+.linea2 {
+    background-color: goldenrod;
+    width: 9px;
+    height: 100%;
+    float: right;
+    clear: none;
+}
+
+.linea3 {
+    background-color: black;
+    width: 760px;
+    height: 13px;
+}
+
+.container {
+    width: 760px;
+    height: 100%
+}
+
+.body {
+    background-color: gray;
+    width: 471px;
+    height: 100%;
+    float: left;
+    clear: none;
+}
+
+.left {
+    background-color: blue;
+    float: left;
+    width: 160px;
+    height: 100%;
+}
+
+.right {
+    background-color: red;
+    float: right;
+    width: 103px;
+    height: 100%;
+}

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+.container {
+    background-color: beige;
+    margin: 50px 50px 50px 50px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+.allpading {
+    padding: 10px 10px 10px 10px;
+}
